@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grippy — Bouldering App to Mark Holds & Log Climbing Sessions</title>
-  <meta name="description" content="Grippy is a bouldering app for climbers: mark holds on a wall photo, save beta per hold, grade and tag problems, and log every session — solo or with your climbing squad." />
-  <meta name="keywords" content="bouldering app, climbing app, boulder problem tracker, climbing log, climbing session tracker, mark holds, climbing beta app, rock climbing training app, bouldering grades, climbing gym app" />
+  <meta name="description" content="Grippy is a bouldering app for climbers: snap a wall photo, let AI outline every hold, save beta per hold, grade and tag problems, and log every session — solo or with your climbing squad." />
+  <meta name="keywords" content="bouldering app, climbing app, boulder problem tracker, climbing log, climbing session tracker, mark holds, hold detection, climbing beta app, rock climbing training app, bouldering grades, climbing gym app" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://dawidw.github.io/grippy_site/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dawidw.github.io/grippy_site/" />
   <meta property="og:title" content="Grippy — Mark Your Climbs" />
-  <meta property="og:description" content="A bouldering app for climbers: mark holds on a wall photo, save beta, grade and tag problems, and log every session." />
-  <meta property="og:image" content="https://dawidw.github.io/grippy_site/assets/screen-holds.png" />
+  <meta property="og:description" content="A bouldering app for climbers: AI outlines every hold on your wall photo, save beta, grade and tag problems, and log every session." />
+  <meta property="og:image" content="https://dawidw.github.io/grippy_site/assets/screen-holds-outline.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Grippy — Mark Your Climbs" />
-  <meta name="twitter:description" content="A bouldering app for climbers: mark holds on a wall photo, save beta, grade and tag problems, and log every session." />
-  <meta name="twitter:image" content="https://dawidw.github.io/grippy_site/assets/screen-holds.png" />
+  <meta name="twitter:description" content="A bouldering app for climbers: AI outlines every hold on your wall photo, save beta, grade and tag problems, and log every session." />
+  <meta name="twitter:image" content="https://dawidw.github.io/grippy_site/assets/screen-holds-outline.png" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧗</text></svg>" />
   <link rel="stylesheet" href="styles.css" />
@@ -29,7 +29,7 @@
     "name": "Grippy",
     "applicationCategory": "SportsApplication",
     "operatingSystem": "iOS",
-    "description": "A bouldering app for climbers: mark holds on a wall photo, save beta per hold, grade and tag problems, and log every climbing session.",
+    "description": "A bouldering app for climbers: AI outlines every hold on your wall photo, save beta per hold, grade and tag problems, and log every climbing session.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -50,22 +50,81 @@
   </header>
 
   <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="hero-copy">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">AI-assisted hold detection</span>
         <h1>Mark your climbs.</h1>
         <p class="lead">
-          Snap a photo of the wall, tag every hold, and keep track of every session —
-          solo or with your squad. Grippy is the climbing log built for boulderers.
+          Snap a photo of the wall and Grippy outlines every hold for you. Save beta,
+          grade the problem, and keep every session logged — solo or with your squad.
         </p>
         <div class="cta-row">
           <a class="pill primary" href="#status">Coming soon to App Store</a>
-          <a class="pill ghost" href="privacy.html">Privacy Policy</a>
+          <a class="pill ghost" href="#how">See how it works</a>
         </div>
       </div>
-      <div class="hero-shots">
-        <img src="assets/screen-boulders.png" alt="Boulders list in Grippy" />
-        <img class="mid" src="assets/screen-holds.png" alt="Marking holds on a boulder photo in Grippy" />
-        <img src="assets/screen-sessions.png" alt="Sessions list in Grippy" />
+      <div class="hero-shots reveal">
+        <figure class="phone">
+          <img src="assets/screen-sessions.png" alt="Session detail view in Grippy, showing boulders climbed with grades and send status" loading="eager" />
+        </figure>
+        <figure class="phone mid">
+          <img src="assets/screen-holds-outline.png" alt="AI-detected hold outlines drawn over a wall photo in Grippy" loading="eager" />
+        </figure>
+        <figure class="phone">
+          <img src="assets/screen-hold-edit.png" alt="Editing beta notes and hand/foot role for a single hold in Grippy" loading="eager" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <span class="eyebrow center">How it works</span>
+      <h2>From wall to logbook in four taps</h2>
+
+      <div class="how-row reveal">
+        <div class="how-shot">
+          <figure class="phone small"><img src="assets/screen-capture.png" alt="Add a wall photo screen in Grippy" loading="lazy" /></figure>
+        </div>
+        <div class="how-copy">
+          <span class="step">01</span>
+          <h3>Snap the wall</h3>
+          <p>Shoot the wall or pick a photo you already have. No calibration, no special gear — just point and shoot.</p>
+        </div>
+      </div>
+
+      <div class="how-row reverse reveal">
+        <div class="how-shot">
+          <figure class="phone small"><img src="assets/screen-holds-outline-2.png" alt="AI hold detection outlining holds on a second wall photo" loading="lazy" /></figure>
+        </div>
+        <div class="how-copy">
+          <span class="step">02</span>
+          <h3>AI finds every hold</h3>
+          <p>Grippy's built-in hold detector outlines every hold on the photo automatically. Missed one? Fix it with a tap.</p>
+        </div>
+      </div>
+
+      <div class="how-row reveal">
+        <div class="how-shot">
+          <figure class="phone small"><img src="assets/screen-boulders.png" alt="Boulders list in Grippy with grades and tags" loading="lazy" /></figure>
+        </div>
+        <div class="how-copy">
+          <span class="step">03</span>
+          <h3>Track every problem</h3>
+          <p>Grade in V-scale, Font, or gym grades. Tag by style, add beta per hold, and filter to find what you're working on.</p>
+        </div>
+      </div>
+
+      <div class="how-row reverse reveal">
+        <div class="how-shot">
+          <figure class="phone small"><img src="assets/screen-sessions-list.png" alt="Sessions list in Grippy with a monthly streak calendar" loading="lazy" /></figure>
+        </div>
+        <div class="how-copy">
+          <span class="step">04</span>
+          <h3>Log every session</h3>
+          <p>Group boulders by session — solo or with your climbing squad — and see your month at a glance, streak included.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -74,22 +133,22 @@
     <div class="wrap">
       <h2>Everything a session needs</h2>
       <div class="feature-grid">
-        <div class="feature-card">
-          <div class="glyph">📍</div>
-          <h3>Mark every hold</h3>
-          <p>Tap directly on the wall photo — hand, foot, start, finish. Add beta notes per hold so you never forget the sequence.</p>
+        <div class="feature-card reveal">
+          <div class="glyph">🎯</div>
+          <h3>AI hold detection</h3>
+          <p>Outlines every hold on your wall photo automatically — hand, foot, start, finish. Adjust anything by hand.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="glyph">📅</div>
           <h3>Log your sessions</h3>
           <p>Group boulders by session — solo or with your climbing section — and see a month at a glance, colour-coded by how it went.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="glyph">☁️</div>
           <h3>Synced, not lost</h3>
           <p>Your climbs sync to your account, so a new phone or a reinstall never means starting from zero.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="glyph">🏷️</div>
           <h3>Tag and grade</h3>
           <p>Grade in V-scale, Font, or gym grades, tag problems by style, and filter your list to find what you're working on.</p>
@@ -115,5 +174,28 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var targets = document.querySelectorAll('.reveal');
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('in-view'); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+      targets.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
 </body>
 </html>
