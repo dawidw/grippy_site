@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dawidw.github.io/grippy_site/sitemap.xml
