@@ -251,6 +251,11 @@ nav.site a {
   width: 100%;
   max-width: 260px;
   text-align: center;
+  overflow: visible;
+}
+
+.spotlight-shot img {
+  border-radius: 21px;
 }
 
 .spotlight-shot figcaption {
