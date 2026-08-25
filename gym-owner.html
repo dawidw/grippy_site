@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grippy for Gyms — Publish Walls, Sets, and Reset Schedules</title>
+  <meta name="description" content="Grippy for gyms: give your walls a digital home. Publish sets, manage boulders wall by wall, and give climbers a heads-up before every reset." />
+  <meta name="keywords" content="bouldering gym software, climbing gym app, wall management, boulder setting software, gym admin app, climbing gym member app" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dawidw.github.io/grippy_site/gym-owner.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dawidw.github.io/grippy_site/gym-owner.html" />
+  <meta property="og:title" content="Grippy for Gyms" />
+  <meta property="og:description" content="Give your walls a digital home. Publish sets, manage boulders wall by wall, and give climbers a heads-up before every reset." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧗</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="/">Grippy</a>
+      <nav class="site">
+        <a href="index.html#how">How it works</a>
+        <a href="#features">Gym features</a>
+        <a href="index.html">For climbers</a>
+        <span class="nav-download">Download from App Store</span>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">For gyms &amp; route setters</span>
+        <h1>Give your walls a digital home.</h1>
+        <p class="lead">
+          Publish your walls and sets in Grippy, let climbers see what's currently up before they
+          even walk in, and give them a heads-up before every reset — no more "wait, where did my
+          project go?" messages.
+        </p>
+        <div class="cta-row">
+          <a class="pill primary" href="mailto:dawid@plaind.pl?subject=Grippy%20for%20my%20gym">Get in touch</a>
+          <a class="pill ghost" href="index.html">See the climber app</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="wrap promise-inner reveal">
+      <span class="eyebrow">Why gyms use it</span>
+      <h2>Your setting work, visible the moment it's live.</h2>
+      <p>Route setters already do the hard part — marking holds, grading, naming the thing. Grippy turns that work into a page every climber at your gym can browse, wall by wall, the second you publish it.</p>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <h2>Built for how gyms actually run</h2>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="glyph">🧱</div>
+          <h3>Walls, not just a list</h3>
+          <p>Model your gym the way it's actually laid out — every physical wall gets its own page, incline, cover photo, and a Current/History split.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="glyph">📦</div>
+          <h3>Sets &amp; publishing</h3>
+          <p>Group boulders into sets, work on them unpublished while you set, and flip them live for climbers the moment you're done.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="glyph">🔔</div>
+          <h3>Reset heads-up</h3>
+          <p>Tell climbers when a wall's next reset is coming, so a stripped project isn't a surprise — and they've got a reason to come back and see what's new.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="glyph">🧭</div>
+          <h3>Gym profile</h3>
+          <p>Logo, cover photo, opening hours, address, and a map pin — everything a climber needs before they walk through the door.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="glyph">🛠️</div>
+          <h3>Setter tools</h3>
+          <p>AI-assisted hold detection, grading in V-scale/Font/gym grades, tags, and beta notes — the same fast flow climbers already use for their own projects.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="glyph">👥</div>
+          <h3>Scoped admin access</h3>
+          <p>Give your setters gym-admin access limited to your gym only — they manage your walls and boulders, nothing outside it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="status" id="status">
+    <div class="wrap">
+      <span class="badge">In development</span>
+      <h2>Onboarding gyms alongside the climber app launch</h2>
+      <p>Want your gym on Grippy from day one? Reach out at <a href="mailto:dawid@plaind.pl">dawid@plaind.pl</a> and we'll get you set up.</p>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <span class="copyright">© 2026 Grippy. Made by Plaind.</span>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var targets = document.querySelectorAll('.reveal');
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('in-view'); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+      targets.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>
