@@ -139,7 +139,7 @@ nav.site a {
 
 .hero {
   position: relative;
-  padding: 72px 0 48px;
+  padding: 72px 0 88px;
   overflow: hidden;
 }
 
@@ -231,7 +231,7 @@ nav.site a {
 }
 
 .spotlight {
-  padding: 24px 0 88px;
+  padding: 48px 0 88px;
   text-align: center;
 }
 
@@ -269,7 +269,7 @@ nav.site a {
 }
 
 .spotlight-shot figcaption {
-  margin-top: 36px;
+  margin-top: 56px;
   font-size: 14.5px;
   font-weight: 600;
   color: var(--text-strong);
