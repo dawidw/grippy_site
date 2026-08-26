@@ -95,7 +95,7 @@ header.site .wrap {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   font-size: 22px;
   font-weight: 700;
   color: var(--text-strong);
@@ -105,8 +105,9 @@ header.site .wrap {
 
 .logo-mark {
   display: block;
-  width: 28px;
-  height: 30px;
+  width: 26px;
+  height: 27px;
+  margin-top: -1px;
 }
 
 nav.site {
