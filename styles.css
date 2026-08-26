@@ -93,11 +93,20 @@ header.site .wrap {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-size: 22px;
   font-weight: 700;
   color: var(--text-strong);
   letter-spacing: -0.5px;
   text-decoration: none;
+}
+
+.logo-mark {
+  display: block;
+  width: 28px;
+  height: 30px;
 }
 
 nav.site {
