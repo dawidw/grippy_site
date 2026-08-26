@@ -434,6 +434,57 @@ section.status p {
   margin: 0 auto;
 }
 
+.waitlist-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 420px;
+  margin: 24px auto 0;
+}
+
+.waitlist-input {
+  flex: 1 1 220px;
+  padding: 13px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-strong);
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.waitlist-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.waitlist-submit {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.waitlist-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.waitlist-status {
+  min-height: 20px;
+  margin: 10px 0 0;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.waitlist-status-ok {
+  color: var(--accent-ink);
+}
+
+.waitlist-status-error {
+  color: #b3261e;
+}
+
 footer.site {
   border-top: 1px solid var(--border);
   padding: 32px 0;

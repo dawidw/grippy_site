@@ -99,7 +99,12 @@
     <div class="wrap">
       <span class="badge">In development</span>
       <h2>Onboarding gyms alongside the climber app launch</h2>
-      <p>Want your gym on Grippy from day one? Reach out at <a href="mailto:dawid@plaind.pl">dawid@plaind.pl</a> and we'll get you set up.</p>
+      <p>Want your gym on Grippy from day one? Leave your email and we'll reach out when we're onboarding gyms — or write to us directly at <a href="mailto:dawid@plaind.pl">dawid@plaind.pl</a>.</p>
+      <form class="waitlist-form" data-waitlist-source="gym">
+        <input type="email" class="waitlist-input" placeholder="you@email.com" required autocomplete="email" />
+        <button type="submit" class="pill primary waitlist-submit">Notify me</button>
+      </form>
+      <p class="waitlist-status" aria-live="polite"></p>
     </div>
   </section>
 
@@ -133,6 +138,58 @@
         { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
       );
       targets.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      // Public anon key, protected by an insert-only RLS policy on
+      // waitlist_emails (see supabase/migrations in the app repo) — safe to
+      // ship in a static page, same key the app itself embeds client-side.
+      var SUPABASE_URL = 'https://tviwoxzthacszkbeftrz.supabase.co';
+      var SUPABASE_ANON_KEY = 'sb_publishable_i3i5AiXx-PU5ITdYALMEGQ_Hahku9DX';
+
+      document.querySelectorAll('.waitlist-form').forEach(function (form) {
+        var input = form.querySelector('.waitlist-input');
+        var button = form.querySelector('.waitlist-submit');
+        var status = form.parentElement.querySelector('.waitlist-status');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = input.value.trim();
+          if (!email) return;
+
+          button.disabled = true;
+          status.textContent = '';
+          status.className = 'waitlist-status';
+
+          fetch(SUPABASE_URL + '/rest/v1/waitlist_emails', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              apikey: SUPABASE_ANON_KEY,
+              Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
+              Prefer: 'return=minimal',
+            },
+            body: JSON.stringify({ email: email, source: form.getAttribute('data-waitlist-source') || null }),
+          })
+            .then(function (res) {
+              // 409 = the unique(email) index caught a re-submit — still a
+              // "you're on the list" outcome from the visitor's side.
+              if (!res.ok && res.status !== 409) throw new Error('Request failed: ' + res.status);
+              status.textContent = "You're on the list — we'll email you at launch.";
+              status.classList.add('waitlist-status-ok');
+              form.reset();
+            })
+            .catch(function () {
+              status.textContent = 'Something went wrong — try again in a moment.';
+              status.classList.add('waitlist-status-error');
+            })
+            .finally(function () {
+              button.disabled = false;
+            });
+        });
+      });
     })();
   </script>
 </body>
