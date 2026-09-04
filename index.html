@@ -30,6 +30,7 @@
     "applicationCategory": "SportsApplication",
     "operatingSystem": "iOS",
     "description": "A bouldering app for climbers: AI outlines every hold on your wall photo, save beta per hold, grade and tag problems, and log every climbing session.",
+    "downloadUrl": "https://apps.apple.com/pl/app/grippy-climbing-journal/id6806345638",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -46,7 +47,7 @@
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="gym-owner.html">Gym owner?</a>
-        <span class="nav-download">Download from App Store</span>
+        <a class="nav-download" href="https://apps.apple.com/pl/app/grippy-climbing-journal/id6806345638" target="_blank" rel="noopener">Download from App Store</a>
       </nav>
     </div>
   </header>
@@ -62,7 +63,7 @@
           grade the problem, and keep every session logged — solo or with your squad.
         </p>
         <div class="cta-row">
-          <a class="pill primary" href="#status">Coming soon to App Store</a>
+          <a class="pill primary" href="https://apps.apple.com/pl/app/grippy-climbing-journal/id6806345638" target="_blank" rel="noopener">Download on the App Store</a>
           <a class="pill ghost" href="#how">See how it works</a>
         </div>
       </div>
@@ -201,14 +202,10 @@
 
   <section class="status" id="status">
     <div class="wrap">
-      <span class="badge">In development</span>
-      <h2>Grippy is being built right now</h2>
-      <p>We're finishing up before submitting to the App Store. Interested? Leave your email and we'll let you know the moment it's live.</p>
-      <form class="waitlist-form" data-waitlist-source="climber">
-        <input type="email" class="waitlist-input" placeholder="you@email.com" required autocomplete="email" />
-        <button type="submit" class="pill primary waitlist-submit">Notify me</button>
-      </form>
-      <p class="waitlist-status" aria-live="polite"></p>
+      <span class="badge">Available now</span>
+      <h2>Grippy is live on the App Store</h2>
+      <p>Download Grippy and start marking your climbs today.</p>
+      <a class="pill primary" href="https://apps.apple.com/pl/app/grippy-climbing-journal/id6806345638" target="_blank" rel="noopener">Download on the App Store</a>
     </div>
   </section>
 
@@ -242,58 +239,6 @@
         { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
       );
       targets.forEach(function (el) { observer.observe(el); });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      // Public anon key, protected by an insert-only RLS policy on
-      // waitlist_emails (see supabase/migrations in the app repo) — safe to
-      // ship in a static page, same key the app itself embeds client-side.
-      var SUPABASE_URL = 'https://tviwoxzthacszkbeftrz.supabase.co';
-      var SUPABASE_ANON_KEY = 'sb_publishable_i3i5AiXx-PU5ITdYALMEGQ_Hahku9DX';
-
-      document.querySelectorAll('.waitlist-form').forEach(function (form) {
-        var input = form.querySelector('.waitlist-input');
-        var button = form.querySelector('.waitlist-submit');
-        var status = form.parentElement.querySelector('.waitlist-status');
-
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var email = input.value.trim();
-          if (!email) return;
-
-          button.disabled = true;
-          status.textContent = '';
-          status.className = 'waitlist-status';
-
-          fetch(SUPABASE_URL + '/rest/v1/waitlist_emails', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              apikey: SUPABASE_ANON_KEY,
-              Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
-              Prefer: 'return=minimal',
-            },
-            body: JSON.stringify({ email: email, source: form.getAttribute('data-waitlist-source') || null }),
-          })
-            .then(function (res) {
-              // 409 = the unique(email) index caught a re-submit — still a
-              // "you're on the list" outcome from the visitor's side.
-              if (!res.ok && res.status !== 409) throw new Error('Request failed: ' + res.status);
-              status.textContent = "You're on the list — we'll email you at launch.";
-              status.classList.add('waitlist-status-ok');
-              form.reset();
-            })
-            .catch(function () {
-              status.textContent = 'Something went wrong — try again in a moment.';
-              status.classList.add('waitlist-status-error');
-            })
-            .finally(function () {
-              button.disabled = false;
-            });
-        });
-      });
     })();
   </script>
 </body>

@@ -130,11 +130,14 @@ nav.site a {
   border-radius: 999px;
   background: var(--surface);
   border: 1px solid var(--border);
-  color: var(--text-muted);
+  color: var(--text-strong);
   font-size: 13.5px;
   font-weight: 600;
-  cursor: default;
-  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.nav-download:hover {
+  background: var(--accent-tint);
 }
 
 .hero {
