@@ -447,6 +447,12 @@ section.status p {
   margin: 0 auto;
 }
 
+section.status .status-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 .waitlist-form {
   display: flex;
   gap: 10px;
