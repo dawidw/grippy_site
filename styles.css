@@ -444,7 +444,7 @@ section.status h2 {
 section.status p {
   color: var(--text-muted);
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0 auto 28px;
 }
 
 section.status .status-note {
